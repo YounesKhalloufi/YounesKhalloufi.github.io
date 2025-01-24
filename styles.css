@@ -32,20 +32,49 @@ header nav ul li a {
 }
 
 section {
-    margin: 2em;
+    margin: 3em auto;
+    max-width: 1200px;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     color: #007BFF; /* Normal Blue */
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
 }
 
 /* About Me Section */
 #profile-picture {
     display: block;
-    max-width: 150px;
+    max-width: 250px; /* Larger size */
     border-radius: 50%;
     margin: 0 auto 1em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+.computer-design {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#computer-icon {
+    width: 200px;
+    height: auto;
+    animation: slideIn 3s ease-in-out;
+}
+
+/* Optional animation for the computer icon */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .about-icons {
