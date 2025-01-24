@@ -8,12 +8,12 @@ body {
     background-size: cover; /* Cover the whole viewport */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Keep the background fixed when scrolling */
-    color: #000; /* Set text color to black */
+    color: black; /* Set text color to black for the entire body */
 }
 
 header {
     background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
-    color: white;
+    color: white; /* Keep header text white */
     text-align: center;
     padding: 1em 0;
 }
@@ -46,7 +46,7 @@ section {
 }
 
 h2 {
-    color: #007BFF;
+    color: #007BFF; /* Blue for section titles */
     font-size: 2em;
     margin-bottom: 1em;
     font-weight: 600;
