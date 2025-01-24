@@ -1,24 +1,33 @@
 // JavaScript File for Portfolio
 
-// Dynamic data
 const portfolioData = {
-    about: "Hi! I'm Younes Khalloufi, a passionate software engineer specializing in creating efficient and innovative solutions. I love building web applications, solving problems, and contributing to open-source projects.",
+    about: "Hi! I'm Younes Khalloufi, a passionate software engineer with a Master's degree in Computer Science and Complex Systems Engineering, specializing in Artificial Intelligence and Robotics.",
     email: "YounesKhalloufi98@gmail.com",
     projects: [
         {
-            name: "Project 1",
-            description: "A cool project that does amazing things.",
-            link: "https://github.com/YounesKhalloufi/project1"
+            name: "AI-Powered Chatbot",
+            description: "A chatbot built using natural language processing to simulate intelligent conversations.",
+            link: "https://github.com/YounesKhalloufi/AI-Chatbot"
         },
         {
-            name: "Project 2",
-            description: "An innovative solution to a challenging problem.",
-            link: "https://github.com/YounesKhalloufi/project2"
+            name: "Autonomous Robot Simulator",
+            description: "A robot simulation that navigates a maze using SLAM algorithms and obstacle detection.",
+            link: "https://github.com/YounesKhalloufi/Robot-Simulator"
         },
         {
-            name: "Project 3",
-            description: "An awesome project built with love and passion.",
-            link: "https://github.com/YounesKhalloufi/project3"
+            name: "AI-Based Recommendation System",
+            description: "A recommendation system for movies and books using collaborative filtering and ML models.",
+            link: "https://github.com/YounesKhalloufi/AI-Recommendation-System"
+        },
+        {
+            name: "Traffic Flow Prediction System",
+            description: "A machine learning model that predicts traffic flow based on historical and weather data.",
+            link: "https://github.com/YounesKhalloufi/Traffic-Prediction"
+        },
+        {
+            name: "AI for Game Playing",
+            description: "An intelligent agent that plays the classic game Snake using reinforcement learning.",
+            link: "https://github.com/YounesKhalloufi/Game-AI"
         }
     ]
 };
