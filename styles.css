@@ -1,19 +1,62 @@
+/* Social Media Bar */
+#social-bar {
+    background-color: #333; /* Dark background */
+    padding: 0.5em 0;
+    text-align: center;
+    position: sticky;
+    top: 0; /* Always visible at the top */
+    z-index: 1000;
+}
+
+#social-bar a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#social-bar a:hover {
+    color: #007BFF;
+    transform: scale(1.2);
+}
+
+/* Skills Section */
+#skills {
+    margin: 3em auto;
+    max-width: 1200px;
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-image: url('computer.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: black;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-image: url('computer.jpeg'); /* Set computer.jpeg as the background */
-    background-size: cover; /* Cover the whole viewport */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Keep the background fixed when scrolling */
-    color: black; /* Set text color to black for the entire body */
 }
 
 header {
-    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
-    color: white; /* Keep header text white */
+    background-color: rgba(0, 123, 255, 0.8);
+    color: white;
     text-align: center;
     padding: 1em 0;
 }
@@ -27,58 +70,9 @@ header nav ul {
     gap: 1em;
 }
 
-header nav ul li {
-    display: inline;
-}
-
 header nav ul li a {
     color: white;
     text-decoration: none;
-}
-
-section {
-    margin: 3em auto;
-    max-width: 1200px;
-    padding: 2em;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #007BFF; /* Blue for section titles */
-    font-size: 2em;
-    margin-bottom: 1em;
-    font-weight: 600;
-}
-
-/* About Me Section */
-#profile-picture {
-    display: block;
-    max-width: 250px;
-    border-radius: 50%;
-    margin: 0 auto 1em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.about-icons {
-    text-align: center;
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    gap: 1.5em;
-    flex-wrap: wrap;
-}
-
-.icon-link {
-    color: #007BFF;
-    font-size: 1.8em;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.icon-link:hover {
-    color: #0056b3;
-    transform: scale(1.2);
 }
 
 /* Project Section */
@@ -100,13 +94,6 @@ h2 {
     transform: scale(1.05);
 }
 
-.project-card a {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 1em 0;
