@@ -1,8 +1,14 @@
-// JavaScript File for Portfolio
-
+// Portfolio Data
 const portfolioData = {
     about: "Hi! I'm Younes Khalloufi, a passionate software engineer with a Master's degree in Computer Science and Complex Systems Engineering, specializing in Artificial Intelligence and Robotics.",
     email: "YounesKhalloufi98@gmail.com",
+    skills: [
+        "Programming: Python, Java, JavaScript",
+        "Web Development: HTML, CSS, React.js",
+        "AI & Machine Learning: TensorFlow, PyTorch",
+        "Robotics: SLAM, ROS",
+        "Database Management: SQL, MongoDB"
+    ],
     projects: [
         {
             name: "AI-Powered Chatbot",
@@ -32,7 +38,7 @@ const portfolioData = {
     ]
 };
 
-// Load data into the page
+// Load Data into the Page
 document.addEventListener("DOMContentLoaded", () => {
     // Load About Me Section
     document.getElementById("aboutText").textContent = portfolioData.about;
@@ -42,7 +48,15 @@ document.addEventListener("DOMContentLoaded", () => {
     emailElement.href = `mailto:${portfolioData.email}`;
     emailElement.textContent = portfolioData.email;
 
-    // Load Projects
+    // Load Skills Section
+    const skillsList = document.querySelector(".skills-list");
+    portfolioData.skills.forEach(skill => {
+        const skillItem = document.createElement("li");
+        skillItem.textContent = skill;
+        skillsList.appendChild(skillItem);
+    });
+
+    // Load Projects Section
     const projectList = document.getElementById("projectList");
     portfolioData.projects.forEach(project => {
         const projectCard = document.createElement("div");
