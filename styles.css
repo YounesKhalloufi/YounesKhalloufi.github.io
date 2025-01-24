@@ -4,10 +4,15 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-image: url('computer.jpeg'); /* Set computer.jpeg as the background */
+    background-size: cover; /* Cover the whole viewport */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
+    color: #fff; /* Make text white for better contrast with the background */
 }
 
 header {
-    background-color: #007BFF; /* Normal Blue */
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -35,13 +40,13 @@ section {
     margin: 3em auto;
     max-width: 1200px;
     padding: 2em;
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #007BFF; /* Normal Blue */
+    color: #007BFF;
     font-size: 2em;
     margin-bottom: 1em;
     font-weight: 600;
@@ -50,7 +55,7 @@ h2 {
 /* About Me Section */
 #profile-picture {
     display: block;
-    max-width: 250px; /* Adjusted size for profile picture */
+    max-width: 250px;
     border-radius: 50%;
     margin: 0 auto 1em;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -67,7 +72,6 @@ h2 {
     animation: slideIn 3s ease-in-out;
 }
 
-/* Optional animation for the computer icon */
 @keyframes slideIn {
     0% {
         transform: translateX(-100%);
