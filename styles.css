@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #87CEEB; /* Sky Blue */
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -36,7 +36,7 @@ section {
 }
 
 h2 {
-    color: #4CAF50;
+    color: #87CEEB; /* Sky Blue */
 }
 
 /* About Me Section */
@@ -53,15 +53,24 @@ h2 {
     margin-top: 1em;
 }
 
-.about-links a {
-    color: #4CAF50;
+.about-links a, .about-links p {
+    color: #87CEEB;
     text-decoration: none;
     font-weight: bold;
     margin-right: 1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
-.about-links a:hover {
+.about-links a:hover, .about-links p:hover a {
     text-decoration: underline;
+}
+
+/* Icons */
+.about-links i {
+    font-size: 1.2em;
+    color: #87CEEB; /* Sky Blue */
 }
 
 /* Project Section */
@@ -85,7 +94,7 @@ h2 {
 
 .project-card a {
     text-decoration: none;
-    color: #4CAF50;
+    color: #87CEEB;
     font-weight: bold;
 }
 
