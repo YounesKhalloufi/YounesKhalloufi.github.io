@@ -51,26 +51,35 @@ h2 {
 .about-links {
     text-align: center;
     margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
 }
 
-.about-links a, .about-links p {
+.social-link {
     color: #007BFF;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 1em;
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
+    font-size: 1.1em;
 }
 
-.about-links a:hover, .about-links p:hover a {
+.social-link i {
+    font-size: 1.2em;
+    color: #007BFF;
+}
+
+.social-link:hover {
+    color: #0056b3;
     text-decoration: underline;
 }
 
 /* Icons */
 .about-links i, #contact i {
     font-size: 1.2em;
-    color: #007BFF; /* Normal Blue */
 }
 
 /* Project Section */
