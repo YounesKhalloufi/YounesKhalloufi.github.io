@@ -1,106 +1,59 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younes Khalloufi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Younes Khalloufi's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="younes.jpeg" alt="Younes Khalloufi" id="profile-picture">
+            <p id="aboutText"></p>
+            <div class="about-links">
+                <a href="https://www.facebook.com/younes.ka.1291/" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <p>
+                    <i class="fab fa-whatsapp"></i> WhatsApp: 
+                    <a href="https://wa.me/393505981964" target="_blank">+393505981964</a>
+                </p>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div id="projectList"></div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p><i class="fas fa-envelope"></i> Email: <a id="email" href="#"></a></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Younes Khalloufi. All rights reserved.</p>
+    </footer>
 
-header {
-    background-color: #87CEEB; /* Sky Blue */
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    margin: 2em;
-}
-
-h2 {
-    color: #87CEEB; /* Sky Blue */
-}
-
-/* About Me Section */
-#profile-picture {
-    display: block;
-    max-width: 150px;
-    border-radius: 50%;
-    margin: 0 auto 1em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.about-links {
-    text-align: center;
-    margin-top: 1em;
-}
-
-.about-links a, .about-links p {
-    color: #87CEEB;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 1em;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.about-links a:hover, .about-links p:hover a {
-    text-decoration: underline;
-}
-
-/* Icons */
-.about-links i {
-    font-size: 1.2em;
-    color: #87CEEB; /* Sky Blue */
-}
-
-/* Project Section */
-#projectList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1em;
-}
-
-.project-card {
-    border: 1px solid #ddd;
-    padding: 1em;
-    border-radius: 8px;
-    background: #f9f9f9;
-    transition: transform 0.2s ease;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-.project-card a {
-    text-decoration: none;
-    color: #87CEEB;
-    font-weight: bold;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1em 0;
-    background-color: #f1f1f1;
-}
+    <script src="script.js"></script>
+</body>
+</html>
