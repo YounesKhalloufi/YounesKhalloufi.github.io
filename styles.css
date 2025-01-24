@@ -50,10 +50,10 @@ h2 {
 /* About Me Section */
 #profile-picture {
     display: block;
-    max-width: 250px; /* Larger size */
+    max-width: 250px; /* Adjusted size for profile picture */
     border-radius: 50%;
     margin: 0 auto 1em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .computer-design {
