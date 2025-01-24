@@ -61,26 +61,6 @@ h2 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.computer-design {
-    text-align: center;
-    margin-top: 2em;
-}
-
-#computer-icon {
-    width: 200px;
-    height: auto;
-    animation: slideIn 3s ease-in-out;
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
 .about-icons {
     text-align: center;
     margin-top: 1em;
