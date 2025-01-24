@@ -8,7 +8,7 @@ body {
     background-size: cover; /* Cover the whole viewport */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Keep the background fixed when scrolling */
-    color: #fff; /* Make text white for better contrast with the background */
+    color: #000; /* Set text color to black */
 }
 
 header {
