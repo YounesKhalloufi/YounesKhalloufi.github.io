@@ -7,7 +7,7 @@ const portfolioData = {
         {
             name: "AI-Powered Chatbot",
             description: "A chatbot built using natural language processing to simulate intelligent conversations.",
-            link: "https://youneskhalloufi.github.io/AI-Powered-Chatbot/"
+            link: "https://github.com/YounesKhalloufi/AI-Chatbot"
         },
         {
             name: "Autonomous Robot Simulator",
