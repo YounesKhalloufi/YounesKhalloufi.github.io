@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const aboutTextElement = document.getElementById("aboutText");
     const emailElement = document.getElementById("email");
     const projectList = document.getElementById("projectList");
-    const searchProjects = document.getElementById("searchProjects");
 
-    // Typewriter effect for "About" section
+    // Typewriter effect for "About Me" text
     function typewriterEffect(text, element, speed = 50) {
         let index = 0;
         function type() {
@@ -31,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         type();
     }
 
+    // Initialize typewriter effect
     typewriterEffect(portfolioData.about, aboutTextElement, 50);
 
     // Set email link
@@ -38,24 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     emailElement.textContent = portfolioData.email;
 
     // Render projects dynamically
-    function renderProjects(filter = "") {
-        projectList.innerHTML = "";
-        portfolioData.projects
-            .filter(project => project.name.toLowerCase().includes(filter.toLowerCase()))
-            .forEach(project => {
-                const projectCard = document.createElement("div");
-                projectCard.className = "project-card";
+    portfolioData.projects.forEach(project => {
+        const projectCard = document.createElement("div");
+        projectCard.className = "project-card";
 
-                projectCard.innerHTML = `
-                    <h3>${project.name}</h3>
-                    <p>${project.description}</p>
-                    <a href="${project.link}" target="_blank">View Project</a>
-                `;
-                projectList.appendChild(projectCard);
-            });
-    }
-
-    searchProjects.addEventListener("input", e => renderProjects(e.target.value));
-
-    renderProjects(); // Initial load
+        projectCard.innerHTML = `
+            <h3>${project.name}</h3>
+            <p>${project.description}</p>
+            <a href="${project.link}" target="_blank">View Project</a>
+        `;
+        projectList.appendChild(projectCard);
+    });
 });
