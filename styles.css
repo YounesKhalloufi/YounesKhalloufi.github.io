@@ -1,114 +1,193 @@
-/* General Styles */
+:root {
+  --typing-speed: 3.25s;
+  --typing-delay: 0.75s;
+}
+
+.no-js #loader {
+  display: none;
+}
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+
+html,
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-image: url('computer.jpeg'); /* Set computer.jpeg as the background */
-    background-size: cover; /* Cover the whole viewport */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Keep the background fixed when scrolling */
-    color: black; /* Set text color to black for the entire body */
+  overflow: hidden;
+}
+.preloader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  z-index: 9999;
+  background: #1794ff;
 }
 
-header {
-    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
-    color: white; /* Keep header text white */
-    text-align: center;
-    padding: 1em 0;
+.my-name {
+  position: relative;
+  font-weight: bold;
+  color: white;
+}
+.my-name::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #1794ff;
+  animation: type-writer var(--typing-speed) steps(27) var(--typing-delay)
+    forwards;
+}
+.my-name::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 2px;
+  background-color: white;
+  animation: type-writer var(--typing-speed) steps(27) var(--typing-delay)
+      forwards,
+    blink-cursor 0.75s ease infinite;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
+@keyframes type-writer {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink-cursor {
+  to {
+    background-color: transparent;
+  }
 }
 
-header nav ul li {
-    display: inline;
+@font-face {
+  font-family: "MaisonMonoRegular";
+  src: url(./fonts/MaisonNeueMono-Regular.otf);
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "MaisonMonoBold";
+  src: url(./fonts/MaisonNeueMono-Bold.otf);
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "MaisonMonoBoldItalic";
+  src: url(./fonts/MaisonNeueMono-BoldItalic.otf);
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "MaisonMonoItalic";
+  src: url(./fonts/MaisonNeueMono-Italic.otf);
+  font-style: normal;
+  font-weight: 100;
 }
 
-header nav ul li a {
-    color: white;
-    text-decoration: none;
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: MaisonMonoRegular;
+  font-weight: 100;
+  box-sizing: border-box;
+}
+#container {
+  background-color: #f4f6fa;
+  overflow: hidden;
+  position: relative;
+}
+.container-xxl {
+  max-width: 1500px;
+  margin: auto;
+}
+.clear {
+  clear: both;
+}
+#head {
+  background: #5436bf;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-section {
-    margin: 3em auto;
-    max-width: 1200px;
-    padding: 2em;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+#header {
+  padding-left: 50px;
+    height: 613px;
+  }
 }
 
-h2 {
-    color: #007BFF; /* Blue for section titles */
-    font-size: 2em;
-    margin-bottom: 1em;
-    font-weight: 600;
+@media (max-width: 1058px) {
+  .intro {
+    width: 100%;
+  }
+  .myImage {
+    width: 100%;
+  }
+}
+@media (max-width: 626px) {
+  .intro {
+    height: 540px;
+  }
 }
 
-/* About Me Section */
-#profile-picture {
-    display: block;
-    max-width: 250px;
-    border-radius: 50%;
-    margin: 0 auto 1em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+@media (max-width: 527px) {
+  .intro {
+    height: 504px;
+  }
+  .myImage {
+    width: 100%;
+    height: 500px;
+  }
 }
 
-.about-icons {
-    text-align: center;
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    gap: 1.5em;
-    flex-wrap: wrap;
+@media (max-width: 490px) {
+  .intro {
+    height: 366px;
+  }
+  .myImage {
+    width: 100%;
+    height: 243px;
+  }
+  #aboutme p {
+    line-height: 30px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 1198px) {
+  #nav ul li {
+    font-size: 16px;
+  }
+  .contactMe ul li {
+    font-size: 16px;
+  }
 }
 
-.icon-link {
-    color: #007BFF;
-    font-size: 1.8em;
-    transition: transform 0.2s ease, color 0.2s ease;
+@media (max-width: 977px) {
+  #nav ul li {
+    padding-right: 0px;
+  }
+  .contactMe ul li {
+    padding-right: 0px;
+    margin-top: -50px;
+  }
 }
-
-.icon-link:hover {
-    color: #0056b3;
-    transform: scale(1.2);
-}
-
-/* Project Section */
-#projectList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1em;
-}
-
-.project-card {
-    border: 1px solid #ddd;
-    padding: 1em;
-    border-radius: 8px;
-    background: #f9f9f9;
-    transition: transform 0.2s ease;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-.project-card a {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1em 0;
-    background-color: #f1f1f1;
+@media (max-width: 292px) {
+  #project1,
+  #project2,
+  #project3,
+  #project4,
+  #project5,
+  #project6,
+  #project7 {
+    height: 112px;
+  }
 }
