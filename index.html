@@ -1,193 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta description="amazing personnal responsive website">
-	<meta
-		keywords="responsive website,personnal website,website templates on github,ikkene abdennafea website,ikkene abdennafea">
-	<meta nam="author" content="Ikkene abdennafea">
-	<title>Ikkene abdennafea</title>
-	<link rel="stylesheet" href="./css/style1.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-	<link rel="shortcut icon" href="./images/icon.png" type="image/png">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younes Khalloufi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
+    <header>
+        <h1>Welcome to Younes Khalloufi's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="younes.jpeg" alt="Younes Khalloufi" id="profile-picture">
+                <p id="aboutText"></p>
+            </div>
+            <div class="about-icons">
+                <!-- Social media icons here -->
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div id="projectList"></div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p><i class="fas fa-envelope"></i> Email: <a id="email" href="#"></a></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Younes Khalloufi. All rights reserved.</p>
+    </footer>
 
-
-	<div class="preloader">
-		<div class="my-name">Hey, my name is Abdennafea.</div>
-	</div>
-
-	<div id="container">
-		<div id="head">
-			<div id="header">
-				<h3 class="animated fadeInUp" id="logo"><img src="./images/logo.svg" style="max-width: 50px;" /></h3>
-
-
-				<div id="nav">
-					<div id="ul-container">
-						<ul>
-							<li><a href="#education">Education</a></li>
-							<li><a href="#skills">Skills</a></li>
-							<li><a href="#experience">Projects</a></li>
-							<li><a href="#more">Soft skills</a></li>
-						</ul>
-						<a href="javascript:void(0);" class="icon">
-							<i class="fas fa-bars" id="the-icon"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="container-xxl">
-				<div id="infoPers">
-					<p id="hi" class="animated fadeInLeft delay-1s">Oh hey there,</p>
-					<p id="ai" class="animated shake delay-2s">I am IKKENE Abdennafea, a Software Engineer</p>
-
-
-					<div class="contactMe">
-						<ul>
-							<li><a href="https://github.com/IkkeneAbdnfea" target="_blank"><i class="fab fa-github"
-										style="font-size: 25px"></i></a></li>
-							<li><a href="https://www.instagram.com/abdennafea/" target="_blank"><i class="fab fa-instagram"
-										style="font-size: 25px"></i></a></li>
-							<li><a href="https://www.linkedin.com/in/abdennafea-ikkene-3020ba172/" target="_blank"><i
-										class="fab fa-linkedin" style="font-size: 25px"></i></a></li>
-						</ul>
-					</div>
-
-				</div>
-				<div id="details">
-					<!-- <div id="transparenceDiv">
-							<div id="descr">
-									<p class="alignText" id="school">School : National School of Applied Science | ENSAO</p>
-									<p class="alignText" id="email">Email : >/p>
-									<p class="alignText" id="phone">Phone : </p>
-									<p class="alignText" id="age">Age :</p>
-							</div>
-					</div> -->
-
-				</div>
-			</div>
-		</div>
-
-
-		<div id="aboutme" class="clear container-xxl">
-			<h1 class="title">About me</h1>
-			<div class="aboutMecontainer">
-				<div class="myImage">
-
-				</div>
-
-				<div class="intro">
-					<p>I am a software engineer passionate about web development, mobile apps development, and game
-						development. Enthusiastic & highly-motivated, I like to take initiative and seek out new
-						challenges
-					</p>
-				</div>
-			</div>
-
-			<!-- <h3><a href="#">Download CV</a></h3> -->
-		</div>
-
-		<div id="education" class="container-xxl">
-			<h1 class="title">Education</h1>
-			<div class="relative-hat">
-				<img class="hat" src="./images/hat.svg" style="width: 112px;" alt="">
-				<div class="education-container">
-
-					<div class="educationInfo">
-						<div id="education1">
-							<h4 class="annee">2018-2021</h4>
-							<div class="school">
-								<div class="cercle"></div>
-								<div class="hide-extra-line"></div>
-								<h4>National School of Applied Sciences of Oujda-ENSAO</h4>
-								<h5>Software engineer</h5>
-							</div>
-						</div>
-
-						<div id="education2">
-							<h4 class="annee clear">2016-2018</h4>
-							<div class="school">
-								<div class="cercle"></div>
-								<h4>National School of Applied Sciences of Oujda-ENSAO</h4>
-								<h5>Sciences and Techniques for the Engineer</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="exp">
-						<div class="img-border">
-							<div id="project6" class="Aproject"></div>
-							<h3>3D Modeling</h3>
-							<h4>Blender</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-			
-		</div>
-		<div id="more">
-			<h1 class="title">Soft skills</h1>
-
-			<div id="more-container">
-				<div class="container-xxl">
-					<ul class="more-icons">
-						<div id="m1">
-							<li>
-								<h4>abilities to adopt with new technologies</h4><i class="fas fa-cogs more-fa"
-									style="font-size: 40px;color: #fff"></i>
-							</li>
-						</div>
-						<div id="m2">
-							<li>
-								<h4>logical thinking & problem solving</h4> <i class="fas fa-coffee more-fa"
-									style="font-size: 40px;color: #fff"></i>
-							</li>
-						</div>
-						<div id="m3">
-							<li>
-								<h4>Enthusiasm for codding and engineering</h4> <i class="fas fa-code more-fa"
-									style="font-size: 40px;color: #fff"></i>
-							</li>
-						</div>
-						<div id="m4">
-							<li>
-								<h4>Critical & creative thinking</h4> <i class="fas fa-heartbeat more-fa"
-									style="font-size: 40px;color: #fff"></i>
-							</li>
-						</div>
-
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div id="footer">
-			<p>Made by ikkene Abdennafea, &copy copyright <span id="year"></span></p>
-		</div>
-
-
-
-		<div id="switch-dark-theme">
-			<i id="dark-icon" class="fas fa-moon switch-fa" style="font-size: 17px;color: #e2e2e2"></i>
-		</div>
-
-
-
-
-		<script src="js/jquery.js"></script>
-		<script src="js/myScript.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
