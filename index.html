@@ -3,76 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Younes Khalloufi - Portfolio</title>
+    <meta name="description" content="Younes Khalloufi's Portfolio: AI, Robotics, and Software Engineering Projects">
+    <title>Younes Khalloufi | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for Animations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Welcome to <span>Younes Khalloufi's</span> Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Younes<span>Khalloufi</span></h1>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
-            </nav>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Hello, I'm <span>Younes Khalloufi</span></h1>
+            <p>AI Enthusiast | Robotics Specialist | Software Engineer</p>
+            <a href="#projects" class="cta">View My Work</a>
         </div>
     </header>
-    
+
     <main>
-        <!-- About Me Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container about-container" data-aos="fade-up">
                 <img src="younes.jpeg" alt="Younes Khalloufi" id="profile-picture">
-                <div class="about-details">
+                <div class="about-content">
+                    <h2>About Me</h2>
                     <p id="aboutText"></p>
-                    <div class="about-icons">
-                        <a href="https://www.facebook.com/younes.ka.1291/" target="_blank" class="icon-link">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com/yons_ka" target="_blank" class="icon-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://x.com/YounesKa07" target="_blank" class="icon-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://wa.me/393505981964" target="_blank" class="icon-link">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/younes-khalloufi" target="_blank" class="icon-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/YounesKhalloufi" target="_blank" class="icon-link">
-                            <i class="fab fa-github"></i>
-                        </a>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/younes.ka.1291/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/yons_ka" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/YounesKa07" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/393505981964" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com/in/younes-khalloufi" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/YounesKhalloufi" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Projects Section -->
-        <section id="projects">
+        <section id="projects" class="section">
             <h2>My Projects</h2>
-            <div id="projectList"></div>
+            <div id="projectList" class="projects-grid"></div>
         </section>
-        
+
         <!-- Contact Section -->
-        <section id="contact">
+        <section id="contact" class="section" data-aos="fade-up">
             <h2>Contact Me</h2>
+            <p>Feel free to reach out to me anytime!</p>
             <p><i class="fas fa-envelope"></i> Email: <a id="email" href="#"></a></p>
         </section>
     </main>
-    
+
     <footer>
-        <p>© 2025 Younes Khalloufi. All rights reserved.</p>
+        <div class="container">
+            <p>© 2025 Younes Khalloufi. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+    <!-- AOS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
