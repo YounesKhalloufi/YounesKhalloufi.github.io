@@ -13,15 +13,31 @@ const portfolioData = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("aboutText").textContent = portfolioData.about;
-
+    const aboutTextElement = document.getElementById("aboutText");
     const emailElement = document.getElementById("email");
-    emailElement.href = `mailto:${portfolioData.email}`;
-    emailElement.textContent = portfolioData.email;
-
     const projectList = document.getElementById("projectList");
     const searchProjects = document.getElementById("searchProjects");
 
+    // Typewriter effect for "About" section
+    function typewriterEffect(text, element, speed = 50) {
+        let index = 0;
+        function type() {
+            if (index < text.length) {
+                element.textContent += text[index];
+                index++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    typewriterEffect(portfolioData.about, aboutTextElement, 50);
+
+    // Set email link
+    emailElement.href = `mailto:${portfolioData.email}`;
+    emailElement.textContent = portfolioData.email;
+
+    // Render projects dynamically
     function renderProjects(filter = "") {
         projectList.innerHTML = "";
         portfolioData.projects
