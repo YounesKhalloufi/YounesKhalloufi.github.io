@@ -85,36 +85,17 @@ h2 {
     margin: 0.5em;
     font-size: 2em;  /* Larger text */
     font-weight: bold;
-    padding: 0.8em;
+    padding: 1em;
     text-align: center;
     border-radius: 10px;
     color: white; /* Default text color */
     transition: transform 0.3s ease, color 0.3s ease;
-    animation: moveSkills 4s ease-in-out infinite;
 }
 
-/* Animation for Soft Skills */
-@keyframes moveSkills {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    25% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    50% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    75% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+/* No animation anymore */
+#skillsList li:hover {
+    transform: scale(1.1);
+    color: white;
 }
 
 /* Random colors for each skill */
@@ -136,12 +117,6 @@ h2 {
 
 #skillsList li:nth-child(5) {
     background-color: #F44336;  /* Red */
-}
-
-/* Hover Effect */
-#skillsList li:hover {
-    transform: scale(1.1);
-    color: white;
 }
 
 /* Footer */
