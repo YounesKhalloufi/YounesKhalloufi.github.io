@@ -1,3 +1,5 @@
+// JavaScript File for Portfolio
+
 const portfolioData = {
     about: "Hi! I'm Younes Khalloufi, a passionate software engineer with a Master's degree in Computer Science and Complex Systems Engineering, specializing in Artificial Intelligence and Robotics.",
     email: "YounesKhalloufi98@gmail.com",
@@ -51,10 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>${project.description}</p>
             <a href="${project.link}" target="_blank">View Project</a>
         `;
-        
-        // Debugging: Log each project being added to the page
-        console.log(`Adding project: ${project.name}`);
-        
+
         projectList.appendChild(projectCard);
     });
 });
