@@ -32,28 +32,26 @@ const portfolioData = {
     ]
 };
 
-// Load data into the page
+// Load data dynamically
 document.addEventListener("DOMContentLoaded", () => {
-    // Load About Me Section
+    // About Me
     document.getElementById("aboutText").textContent = portfolioData.about;
 
-    // Load Email
+    // Email
     const emailElement = document.getElementById("email");
     emailElement.href = `mailto:${portfolioData.email}`;
     emailElement.textContent = portfolioData.email;
 
-    // Load Projects
+    // Projects
     const projectList = document.getElementById("projectList");
     portfolioData.projects.forEach(project => {
         const projectCard = document.createElement("div");
         projectCard.className = "project-card";
-
         projectCard.innerHTML = `
             <h3>${project.name}</h3>
             <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">View Project</a>
+            <a href="${project.link}" target="_blank" class="cta">View Project</a>
         `;
-
         projectList.appendChild(projectCard);
     });
 });
