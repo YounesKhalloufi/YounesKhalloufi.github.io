@@ -29,32 +29,13 @@ const portfolioData = {
             description: "An intelligent agent that plays the classic game Snake using reinforcement learning.",
             link: "https://github.com/YounesKhalloufi/Game-AI"
         }
-    ],
-    softSkills: [
-        "Ability to adapt to new technologies",
-        "Logical thinking & problem solving",
-        "Teamwork and collaboration",
-        "Good communication skills",
-        "Time management and organization"
     ]
 };
 
 // Load data into the page
 document.addEventListener("DOMContentLoaded", () => {
-    // Load About Me Section with Typing Effect
-    const aboutTextElement = document.getElementById("aboutText");
-    const aboutText = portfolioData.about;
-    let index = 0;
-
-    function typeEffect() {
-        if (index < aboutText.length) {
-            aboutTextElement.textContent += aboutText.charAt(index);
-            index++;
-            setTimeout(typeEffect, 50); // Adjust speed here
-        }
-    }
-
-    typeEffect();
+    // Load About Me Section
+    document.getElementById("aboutText").textContent = portfolioData.about;
 
     // Load Email
     const emailElement = document.getElementById("email");
@@ -74,13 +55,5 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         projectList.appendChild(projectCard);
-    });
-
-    // Load Soft Skills
-    const skillsList = document.getElementById("skillsList");
-    portfolioData.softSkills.forEach(skill => {
-        const skillItem = document.createElement("li");
-        skillItem.textContent = skill;
-        skillsList.appendChild(skillItem);
     });
 });
