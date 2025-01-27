@@ -106,7 +106,17 @@ h2 {
     font-weight: bold;
 }
 
-/* Footer */
+/* Soft Skills Section */
+#skillsList {
+    list-style: none;
+    padding: 0;
+}
+
+#skillsList li {
+    font-size: 1.2em;
+    padding: 0.5em 0;
+}
+
 footer {
     text-align: center;
     padding: 1em 0;
