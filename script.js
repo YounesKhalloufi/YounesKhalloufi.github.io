@@ -1,59 +1,159 @@
-// JavaScript File for Portfolio
+$(function () {
+  setTimeout(() => {
+    $(".preloader").fadeOut("slow");
+    $("body, html").css("overflow", "auto");
+  }, 4000);
+  // animateDiv("#school");
+  // animateDiv("#email");
+  // animateDiv("#phone");
+  // animateDiv("#age");
 
-const portfolioData = {
-    about: "Hi! I'm Younes Khalloufi, a passionate software engineer with a Master's degree in Computer Science and Complex Systems Engineering, specializing in Artificial Intelligence and Robotics.",
-    email: "YounesKhalloufi98@gmail.com",
-    projects: [
-        {
-            name: "AI-Powered Chatbot",
-            description: "A chatbot built using natural language processing to simulate intelligent conversations.",
-            link: "https://github.com/YounesKhalloufi/AI-Chatbot"
-        },
-        {
-            name: "Autonomous Robot Simulator",
-            description: "A robot simulation that navigates a maze using SLAM algorithms and obstacle detection.",
-            link: "https://github.com/YounesKhalloufi/Robot-Simulator"
-        },
-        {
-            name: "AI-Based Recommendation System",
-            description: "A recommendation system for movies and books using collaborative filtering and ML models.",
-            link: "https://github.com/YounesKhalloufi/AI-Recommendation-System"
-        },
-        {
-            name: "Traffic Flow Prediction System",
-            description: "A machine learning model that predicts traffic flow based on historical and weather data.",
-            link: "https://github.com/YounesKhalloufi/Traffic-Prediction"
-        },
-        {
-            name: "AI for Game Playing",
-            description: "An intelligent agent that plays the classic game Snake using reinforcement learning.",
-            link: "https://github.com/YounesKhalloufi/Game-AI"
-        }
-    ]
-};
+  ///////////////////////
+  function animateDiv(idd) {
+    var positionTop = $(window).scrollTop();
+    var positionBottom = positionTop + window.innerHeight;
+    var divTop = $(idd).offset().top;
+    var divBottom = divTop + $(idd).height();
+    if (positionTop < divTop && positionBottom > divBottom) {
+      if (
+        idd == "#prog-and-db" ||
+        idd == "#web-dev" ||
+        idd == "#other-skills"
+      ) {
+        $(".progress-bar", idd)
+          .css("-webkit-animation", "animate-positive 2s")
+          .css("animation", "animate-positive 2s");
+      } else if (
+        (idd == "#education1" ||
+          idd == "#education2" ||
+          idd == "#education3") &&
+        window.innerWidth < 768
+      ) {
+        $(idd).addClass("animated bounce");
+      } else {
+        $(idd).addClass("animated slideInDown");
+      }
+    }
+    if (divTop > positionBottom || divBottom < positionTop) {
+      if (
+        idd == "#prog-and-db" ||
+        idd == "#web-dev" ||
+        idd == "#other-skills"
+      ) {
+        $(".progress-bar", idd)
+          .css("-webkit-animation", "none")
+          .css("animation", "none");
+      } else if (
+        (idd == "#education1" ||
+          idd == "#education2" ||
+          idd == "#education3") &&
+        window.innerWidth < 768
+      ) {
+        $(idd).removeClass("animated bounce");
+      } else {
+        $(idd).removeClass("animated slideInDown");
+      }
+    }
+  }
 
-// Load data into the page
-document.addEventListener("DOMContentLoaded", () => {
-    // Load About Me Section
-    document.getElementById("aboutText").textContent = portfolioData.about;
+  $(window).scroll(function () {
+    // adjusting the height of #other-skills
+    var newOtherSkillsHeight = $("#web-dev").height();
+    $("#other-skills").height(newOtherSkillsHeight);
+    // appliying animation on divs
+    // animateDiv("#school");
+    // animateDiv("#email");
+    // animateDiv("#phone");
+    // animateDiv("#age");
 
-    // Load Email
-    const emailElement = document.getElementById("email");
-    emailElement.href = `mailto:${portfolioData.email}`;
-    emailElement.textContent = portfolioData.email;
+    // animateDiv("#education1");
+    // animateDiv("#education2");
+    // animateDiv("#education3");
 
-    // Load Projects
-    const projectList = document.getElementById("projectList");
-    portfolioData.projects.forEach(project => {
-        const projectCard = document.createElement("div");
-        projectCard.className = "project-card";
+    animateDiv("#prog-and-db");
+    animateDiv("#web-dev");
+    animateDiv("#other-skills");
 
-        projectCard.innerHTML = `
-            <h3>${project.name}</h3>
-            <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">View Project</a>
-        `;
+    animateDiv("#m1");
+    animateDiv("#m2");
+    animateDiv("#m3");
+    animateDiv("#m4");
+  });
 
-        projectList.appendChild(projectCard);
-    });
+  //sroll smoothly to elements
+  $("a[href^='#']").click(function (e) {
+    e.preventDefault();
+
+    var position = $($(this).attr("href")).offset().top;
+
+    $("body, html").animate(
+      {
+        scrollTop: position - 70,
+      },
+      900
+    );
+
+    // auto collapse menu on mobile
+    $(".icon").click();
+    $("#header").css("height", "63.88px");
+    $("#header").css("box-shadow", "none");
+  });
+
+  // footer dynamic copyright year
+  $("#year").text(new Date().getFullYear());
+
+  // responsive menu bar
+  $(".icon").click(function () {
+    $("#ul-container").toggleClass("responsive");
+
+    if ($("#ul-container").hasClass("responsive")) {
+      $("#header").css("height", "266px");
+      $("#header").css("box-shadow", "-6px 14px 20px 1px rgb(0 0 105 / 20%)");
+    } else {
+      $("#header").css("height", "63.88px");
+      $("#header").css("box-shadow", "none");
+    }
+
+    //toggle icon
+    if ($("#the-icon").hasClass("fa-bars")) {
+      $("#the-icon").removeClass("fa-bars");
+      $("#the-icon").addClass("fa-times");
+    } else {
+      $("#the-icon").removeClass("fa-times");
+      $("#the-icon").addClass("fa-bars");
+    }
+  });
+
+  // when resizing the window, reset to defaults
+  $(window).resize(function () {
+    if (window.innerWidth > 768) $("#header").css("height", "63.88px");
+    $("#ul-container").removeClass("responsive");
+    $("#header").css("box-shadow", "none");
+
+    $("#the-icon").removeClass("fa-times");
+    $("#the-icon").addClass("fa-bars");
+  });
+
+  // switch to dark theme
+  $("#switch-dark-theme").click(function () {
+    $(this).toggleClass("dark");
+    //toggle icon
+    if ($("#dark-icon").hasClass("fa-moon")) {
+      $("#dark-icon").removeClass("fa-moon");
+      $("#dark-icon").addClass("fa-sun");
+    } else {
+      $("#dark-icon").removeClass("fa-sun");
+      $("#dark-icon").addClass("fa-moon");
+    }
+
+    $("#head").toggleClass("dark");
+    $("#header").toggleClass("dark");
+    $("#container").toggleClass("dark");
+    $("#more-container").toggleClass("dark");
+    $("#footer p").toggleClass("dark");
+    $(".aboutMecontainer").toggleClass("dark");
+    $(".img-border").toggleClass("dark");
+    $(".skills-elts h2").toggleClass("dark");
+    $(".exp h4").toggleClass("dark");
+  });
 });
