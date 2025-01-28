@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Younes Khalloufi - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Younes Khalloufi's Portfolio</h1>
+        <h1 class="main-title">Welcome to Younes Khalloufi's Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -27,45 +27,33 @@
             <h2>About Me</h2>
             <div class="about-container">
                 <img src="younes.jpeg" alt="Younes Khalloufi" id="profile-picture">
-                <p id="aboutText"></p>
+                <p id="aboutText" class="animated-text"></p>
             </div>
             <div class="about-icons">
-                <a href="https://www.facebook.com/younes.ka.1291/" target="_blank" class="icon-link" style="color: #3b5998;">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/yons_ka?utm_source=qr&igsh=ZG1nNzloMHlpOWl0" target="_blank" class="icon-link" style="color: #E4405F;">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/YounesKa07?t=LOanJJ1rtntKb3xTDYnbFg&s=08" target="_blank" class="icon-link" style="color: #000;">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://wa.me/393505981964" target="_blank" class="icon-link" style="color: #25D366;">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/younes-khalloufi-2983b9225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="icon-link" style="color: #0e76a8;">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/YounesKhalloufi" target="_blank" class="icon-link" style="color: #333;">
-                    <i class="fab fa-github"></i>
-                </a>
+                <a href="https://www.facebook.com/younes.ka.1291/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/yons_ka?utm_source=qr&igsh=ZG1nNzloMHlpOWl0" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/YounesKa07?t=LOanJJ1rtntKb3xTDYnbFg&s=08" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/393505981964" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/younes-khalloufi-2983b9225" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/YounesKhalloufi" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
-            <div id="projectList"></div>
+            <div id="projectList" class="project-grid"></div>
         </section>
-        
+
         <!-- Soft Skills Section -->
         <section id="softskills">
             <h2>Soft Skills</h2>
             <ul id="skillsList">
-                <li>Abilities to adopt with new technologies</li>
-                <li>Logical thinking & problem solving</li>
-                <li>Strong communication skills</li>
-                <li>Adaptability & flexibility</li>
-                <li>Teamwork & collaboration</li>
+                <li>Adapting to New Technologies</li>
+                <li>Logical Thinking & Problem Solving</li>
+                <li>Strong Communication Skills</li>
+                <li>Adaptability & Flexibility</li>
+                <li>Teamwork & Collaboration</li>
             </ul>
         </section>
 
@@ -75,7 +63,7 @@
             <p><i class="fas fa-envelope"></i> Email: <a id="email" href="#"></a></p>
         </section>
     </main>
-    
+
     <footer>
         <p>© 2025 Younes Khalloufi. All rights reserved.</p>
     </footer>
