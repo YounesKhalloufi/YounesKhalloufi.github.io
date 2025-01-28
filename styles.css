@@ -1,127 +1,109 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f8fa;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-image: url('computer.jpeg'); /* Set computer.jpeg as the background */
-    background-size: cover; /* Cover the whole viewport */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Keep the background fixed when scrolling */
-    color: black; /* Set text color to black for the entire body */
+    color: #333;
 }
 
 header {
-    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue */
-    color: white; /* Keep header text white */
-    text-align: center;
+    background-color: #007BFF;
+    color: white;
     padding: 1em 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
-    gap: 1em;
+    list-style: none;
 }
 
 header nav ul li {
-    display: inline;
+    margin: 0 1.5em;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-}
-
-/* About Me Section */
-#profile-picture {
-    display: block;
-    max-width: 250px;
-    border-radius: 50%;
-    margin: 0 auto 1em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-section {
-    margin: 3em auto;
-    max-width: 1200px;
-    padding: 2em;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #007BFF; /* Blue for section titles */
-    font-size: 2em;
-    margin-bottom: 1em;
     font-weight: 600;
 }
 
-/* Soft Skills Section */
-#softskills {
-    margin: 3em auto;
-    padding: 2em;
-    max-width: 1200px;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+.main-title {
+    animation: fade-in 2s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-text {
+    font-size: 1.6em;
+    animation: typewriter 4s steps(40, end);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.project-card {
+    padding: 1.5em;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
 }
 
 #skillsList {
-    list-style: none;
-    padding: 0;
-    font-size: 1.5em;  /* Increased font size for better readability */
-    color: #333;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    font-size: 1.5em;
 }
 
 #skillsList li {
-    margin: 0.5em;
-    font-size: 2em;  /* Larger text */
-    font-weight: bold;
+    background-color: #007BFF;
     padding: 1em;
-    text-align: center;
-    border-radius: 10px;
-    color: white; /* Default text color */
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* No animation anymore */
-#skillsList li:hover {
-    transform: scale(1.1);
     color: white;
+    border-radius: 10px;
+    margin: 0.5em;
+    text-align: center;
+    transition: background-color 0.3s;
 }
 
-/* Random colors for each skill */
-#skillsList li:nth-child(1) {
-    background-color: #4CAF50;  /* Green */
-}
-
-#skillsList li:nth-child(2) {
-    background-color: #FF9800;  /* Orange */
-}
-
-#skillsList li:nth-child(3) {
-    background-color: #2196F3;  /* Blue */
-}
-
-#skillsList li:nth-child(4) {
-    background-color: #9C27B0;  /* Purple */
-}
-
-#skillsList li:nth-child(5) {
-    background-color: #F44336;  /* Red */
-}
-
-/* Footer */
 footer {
     text-align: center;
-    padding: 1em 0;
-    background-color: #f1f1f1;
+    padding: 1em;
+    background-color: #007BFF;
+    color: white;
 }
