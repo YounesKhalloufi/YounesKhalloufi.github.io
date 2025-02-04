@@ -1,116 +1,8 @@
-/* CSS Variables for easy theming */
+/* Custom CSS Variables */
 :root {
   --primary-color: #007BFF;
   --secondary-color: #0056b3;
   --accent-color: #FF6F61;
-  --light-bg: #ffffff;
-  --light-text: #333;
-  --dark-bg: #121212;
-  --dark-text: #f1f1f1;
-  --header-gradient: linear-gradient(135deg, #007BFF, #00A8FF);
-  --header-text: #fff;
-}
-
-/* Default Theme (Light) */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: var(--light-bg) url('computer.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  color: var(--light-text);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* Dark Theme Overrides */
-body.dark {
-  background: var(--dark-bg);
-  color: var(--dark-text);
-}
-
-/* Header */
-header {
-  background: var(--header-gradient);
-  color: var(--header-text);
-  text-align: center;
-  padding: 1em 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-}
-
-#theme-toggle {
-  background: transparent;
-  border: none;
-  color: var(--header-text);
-  font-size: 1.5em;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-#theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.5em 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-
-header nav ul li a {
-  color: var(--header-text);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-header nav ul li a:hover {
-  color: var(--accent-color);
-}
-
-/* Section Styles */
-section {
-  margin: 2em auto;
-  max-width: 1200px;
-  padding: 2em;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-body.dark section {
-  background-color: rgba(20, 20, 20, 0.95);
-}
-
-h2 {
-  color: var(--primary-color);
-  font-size: 2em;
-  margin-bottom: 1em;
-  font-weight: 600;
-}
-
-/* About Me Section */
-#profile-picture {
-  display: block;
-  max-width: 250px;
-  border-radius: 50%;
-  margin: 0 auto 1em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.about-container {
-  text-align: center;
 }
 
 /* Typewriter effect for About text */
@@ -118,13 +10,10 @@ h2 {
   overflow: hidden;
   border-right: .15em solid var(--accent-color);
   white-space: nowrap;
-  margin: 1em auto;
   letter-spacing: .1em;
   animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
-  max-width: 90%;
 }
 
-/* Keyframes for typewriter effect */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -135,93 +24,38 @@ h2 {
   50% { border-color: var(--accent-color); }
 }
 
-/* Social Icons */
-.about-icons,
-.contact-social {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-  flex-wrap: wrap;
-  margin-top: 1em;
-}
-
-.icon-link {
-  font-size: 1.8em;
-  transition: transform 0.2s ease, color 0.2s ease;
-  text-decoration: none;
-}
-
-.icon-link:hover {
-  transform: scale(1.2);
-}
-
-/* Specific colors for social icons */
-.icon-link.fb { color: #3b5998; }
-.icon-link.insta { color: #E4405F; }
-.icon-link.twitter { color: #1DA1F2; }
-.icon-link.whatsapp { color: #25D366; }
-.icon-link.linkedin { color: #0e76a8; }
-.icon-link.github { color: #333; }
-
-/* Projects Section */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5em;
-}
-
+/* Project Cards Customization */
 .project-card {
-  border: 1px solid #ddd;
-  padding: 1em;
-  border-radius: 8px;
-  background: #f9f9f9;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Theme Overrides */
+body.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark .navbar,
+body.dark footer {
+  background: #1e1e1e !important;
+}
+
+body.dark .card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Optional: Smooth fade-in for project cards */
+.project-card {
   opacity: 0;
   transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .project-card.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.project-card a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-/* Contact Section */
-.contact-details {
-  text-align: center;
-  font-size: 1.1em;
-  line-height: 1.8;
-}
-
-.contact-details p {
-  margin: 0.5em 0;
-}
-
-.contact-details a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.contact-details a:hover {
-  color: var(--accent-color);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1em 0;
-  background-color: #f1f1f1;
-  transition: background-color 0.3s ease;
 }
