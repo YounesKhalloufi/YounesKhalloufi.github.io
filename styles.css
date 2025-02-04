@@ -1,36 +1,39 @@
 /* CSS Variables for easy theming */
 :root {
   --primary-color: #007BFF;
-  --secondary-color: #00A8FF;
-  --accent-color: #FF6F61;
+  --secondary-color: #0056b3;
   --light-bg: #ffffff;
-  --light-text: #2c3e50;
-  --dark-bg: #2c3e50;
-  --dark-text: #ecf0f1;
-  --header-bg: linear-gradient(135deg, #007BFF, #00A8FF);
+  --light-text: #000;
+  --dark-bg: #121212;
+  --dark-text: #f1f1f1;
+  --header-bg: rgba(0, 123, 255, 0.8);
   --header-text: #fff;
 }
 
 /* Default Theme (Light) */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--light-bg) url('computer.jpeg') no-repeat center center fixed;
+  line-height: 1.6;
+  background-image: url('computer.jpeg');
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--light-text);
-  transition: background 0.3s ease, color 0.3s ease;
+  background-color: var(--light-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dark Theme Overrides */
 body.dark {
-  background: var(--dark-bg);
+  background-color: var(--dark-bg);
   color: var(--dark-text);
 }
 
 /* Header */
 header {
-  background: var(--header-bg);
+  background-color: var(--header-bg);
   color: var(--header-text);
   text-align: center;
   padding: 1em 0;
@@ -75,7 +78,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 /* Section Styles */
@@ -83,14 +86,14 @@ section {
   margin: 2em auto;
   max-width: 1200px;
   padding: 2em;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
 body.dark section {
-  background-color: rgba(44, 62, 80, 0.95);
+  background-color: rgba(20, 20, 20, 0.9);
 }
 
 h2 {
@@ -100,7 +103,7 @@ h2 {
   font-weight: 600;
 }
 
-/* About Section */
+/* About Me Section */
 #profile-picture {
   display: block;
   max-width: 250px;
@@ -111,34 +114,9 @@ h2 {
 
 .about-container {
   text-align: center;
-  margin-bottom: 1em;
 }
 
-/* Typewriter Effect (for dynamic About text) */
-#aboutText {
-  overflow: hidden;
-  border-right: .15em solid var(--accent-color);
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .1em;
-  animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
-  max-width: 80%;
-}
-
-/* Keyframes for typewriter */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--accent-color); }
-}
-
-/* Social Icons */
-.about-icons,
-.contact-details .social-contact {
+.about-icons {
   text-align: center;
   margin-top: 1em;
   display: flex;
@@ -148,27 +126,21 @@ h2 {
 }
 
 .icon-link {
+  color: var(--primary-color);
   font-size: 1.8em;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .icon-link:hover {
+  color: var(--secondary-color);
   transform: scale(1.2);
 }
 
-/* Specific colors for social icons */
-.icon-link.fb { color: #3b5998; }
-.icon-link.insta { color: #E4405F; }
-.icon-link.twitter { color: #1DA1F2; }
-.icon-link.whatsapp { color: #25D366; }
-.icon-link.linkedin { color: #0e76a8; }
-.icon-link.github { color: #333; }
-
 /* Projects Section */
-.project-grid {
+#projectList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5em;
+  gap: 1em;
 }
 
 .project-card {
@@ -176,18 +148,11 @@ h2 {
   padding: 1em;
   border-radius: 8px;
   background: #f9f9f9;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.project-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -201,7 +166,11 @@ h2 {
 .contact-details {
   text-align: center;
   font-size: 1.1em;
-  line-height: 2;
+  line-height: 1.8;
+}
+
+.contact-details p {
+  margin: 0.5em 0;
 }
 
 .contact-details a {
@@ -211,7 +180,14 @@ h2 {
 }
 
 .contact-details a:hover {
-  color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.contact-social {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
 }
 
 /* Footer */
