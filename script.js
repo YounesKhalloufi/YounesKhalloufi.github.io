@@ -32,9 +32,9 @@ const portfolioData = {
   ]
 };
 
-// Initialize Portfolio Content
+// Load Portfolio Content
 function loadPortfolio() {
-  // About Me Text (Typewriter effect is handled by CSS)
+  // About Text (typewriter effect via CSS)
   document.getElementById("aboutText").textContent = portfolioData.about;
 
   // Set Email & Phone
@@ -46,7 +46,7 @@ function loadPortfolio() {
   phoneEl.href = `tel:${portfolioData.phone}`;
   phoneEl.textContent = portfolioData.phone;
 
-  // Load Projects dynamically
+  // Load Projects Dynamically
   const projectList = document.getElementById("projectList");
   portfolioData.projects.forEach((project) => {
     const col = document.createElement("div");
@@ -63,7 +63,7 @@ function loadPortfolio() {
     projectList.appendChild(col);
   });
 
-  // Reveal project cards on scroll using Intersection Observer
+  // Reveal Project Cards on Scroll using Intersection Observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -72,6 +72,7 @@ function loadPortfolio() {
       }
     });
   }, { threshold: 0.2 });
+  
   document.querySelectorAll(".project-card").forEach(card => {
     observer.observe(card);
   });
@@ -81,14 +82,14 @@ function loadPortfolio() {
 function initThemeToggle() {
   const themeToggleButton = document.getElementById("theme-toggle");
   const bodyElement = document.body;
-
+  
   // Check localStorage for theme preference
   const currentTheme = localStorage.getItem("theme") || "light";
   if (currentTheme === "dark") {
     bodyElement.classList.add("dark");
     themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
   }
-
+  
   themeToggleButton.addEventListener("click", () => {
     bodyElement.classList.toggle("dark");
     const isDark = bodyElement.classList.contains("dark");
@@ -97,24 +98,20 @@ function initThemeToggle() {
   });
 }
 
-// Scroll-to-top Button Functionality
+// Scroll-to-Top Button Functionality
 function initScrollToTop() {
   const scrollBtn = document.getElementById("scrollTopBtn");
-
+  
   window.addEventListener("scroll", () => {
-    if (document.documentElement.scrollTop > 300) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
+    scrollBtn.style.display = (document.documentElement.scrollTop > 300) ? "block" : "none";
   });
-
+  
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
-// Wait for DOM content to load
+// Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   loadPortfolio();
   initThemeToggle();
