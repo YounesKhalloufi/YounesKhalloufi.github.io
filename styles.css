@@ -162,6 +162,17 @@ h2 {
   font-weight: bold;
 }
 
+/* Contact Links Hover Effects */
+#email, #phone {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#email:hover, #phone:hover {
+  color: var(--secondary-color);
+}
+
 /* Footer */
 footer {
   text-align: center;
