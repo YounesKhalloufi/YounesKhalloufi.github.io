@@ -34,43 +34,36 @@ const portfolioData = {
 
 // Function to initialize portfolio content
 function loadPortfolio() {
-  // Typewriter effect for About Me text (optional; you can remove if not desired)
-  const aboutTextEl = document.getElementById("aboutText");
-  const aboutMessage = portfolioData.about;
-  let index = 0;
-  function typeWriter() {
-    if (index < aboutMessage.length) {
-      aboutTextEl.textContent += aboutMessage.charAt(index);
-      index++;
-      setTimeout(typeWriter, 40);
-    }
-  }
-  typeWriter();
+  // Typewriter effect for About text is handled by CSS animation.
+  document.getElementById("aboutText").textContent = portfolioData.about;
 
-  // Set Email
+  // Set Email & Phone
   const emailEl = document.getElementById("email");
   emailEl.href = `mailto:${portfolioData.email}`;
   emailEl.textContent = portfolioData.email;
 
-  // Set Phone
   const phoneEl = document.getElementById("phone");
   phoneEl.href = `tel:${portfolioData.phone}`;
   phoneEl.textContent = portfolioData.phone;
 
-  // Load Projects dynamically with fade-in animation
+  // Load Projects dynamically
   const projectList = document.getElementById("projectList");
   portfolioData.projects.forEach((project) => {
-    const projectCard = document.createElement("div");
-    projectCard.className = "project-card";
-    projectCard.innerHTML = `
-      <h3>${project.name}</h3>
-      <p>${project.description}</p>
-      <a href="${project.link}" target="_blank" rel="noopener">View Project</a>
+    const col = document.createElement("div");
+    col.className = "col";
+    col.innerHTML = `
+      <div class="card h-100 project-card">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${project.name}</h5>
+          <p class="card-text flex-grow-1">${project.description}</p>
+          <a href="${project.link}" target="_blank" class="btn btn-primary mt-3">View Project</a>
+        </div>
+      </div>
     `;
-    projectList.appendChild(projectCard);
+    projectList.appendChild(col);
   });
 
-  // Reveal projects as they scroll into view using Intersection Observer
+  // Reveal project cards on scroll using Intersection Observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -79,6 +72,7 @@ function loadPortfolio() {
       }
     });
   }, { threshold: 0.2 });
+  
   document.querySelectorAll(".project-card").forEach(card => {
     observer.observe(card);
   });
@@ -88,14 +82,14 @@ function loadPortfolio() {
 function initThemeToggle() {
   const themeToggleButton = document.getElementById("theme-toggle");
   const bodyElement = document.body;
-
+  
   // Check localStorage for theme preference
   const currentTheme = localStorage.getItem("theme") || "light";
   if (currentTheme === "dark") {
     bodyElement.classList.add("dark");
     themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
   }
-
+  
   themeToggleButton.addEventListener("click", () => {
     bodyElement.classList.toggle("dark");
     const isDark = bodyElement.classList.contains("dark");
@@ -104,7 +98,7 @@ function initThemeToggle() {
   });
 }
 
-// Ensure the DOM is fully loaded before running scripts
+// Wait for DOM content to load
 document.addEventListener("DOMContentLoaded", () => {
   loadPortfolio();
   initThemeToggle();
