@@ -34,20 +34,30 @@ const portfolioData = {
 
 // Function to initialize portfolio content
 function loadPortfolio() {
-  // Load About Me Section
-  document.getElementById("aboutText").textContent = portfolioData.about;
+  // Typewriter effect for About Me text (optional; you can remove if not desired)
+  const aboutTextEl = document.getElementById("aboutText");
+  const aboutMessage = portfolioData.about;
+  let index = 0;
+  function typeWriter() {
+    if (index < aboutMessage.length) {
+      aboutTextEl.textContent += aboutMessage.charAt(index);
+      index++;
+      setTimeout(typeWriter, 40);
+    }
+  }
+  typeWriter();
 
-  // Load Email
-  const emailElement = document.getElementById("email");
-  emailElement.href = `mailto:${portfolioData.email}`;
-  emailElement.textContent = portfolioData.email;
+  // Set Email
+  const emailEl = document.getElementById("email");
+  emailEl.href = `mailto:${portfolioData.email}`;
+  emailEl.textContent = portfolioData.email;
 
-  // Load Phone
-  const phoneElement = document.getElementById("phone");
-  phoneElement.href = `tel:${portfolioData.phone}`;
-  phoneElement.textContent = portfolioData.phone;
+  // Set Phone
+  const phoneEl = document.getElementById("phone");
+  phoneEl.href = `tel:${portfolioData.phone}`;
+  phoneEl.textContent = portfolioData.phone;
 
-  // Load Projects dynamically
+  // Load Projects dynamically with fade-in animation
   const projectList = document.getElementById("projectList");
   portfolioData.projects.forEach((project) => {
     const projectCard = document.createElement("div");
@@ -58,6 +68,19 @@ function loadPortfolio() {
       <a href="${project.link}" target="_blank" rel="noopener">View Project</a>
     `;
     projectList.appendChild(projectCard);
+  });
+
+  // Reveal projects as they scroll into view using Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll(".project-card").forEach(card => {
+    observer.observe(card);
   });
 }
 
