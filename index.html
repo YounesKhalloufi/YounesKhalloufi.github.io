@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Younes Khalloufi's Portfolio showcasing projects, skills, and contact information." />
   <title>Younes Khalloufi - Portfolio</title>
-  <!-- Bootstrap CSS CDN -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Optional: smooth scroll behavior */
+    /* Optional: Enable smooth scroll */
     html {
       scroll-behavior: smooth;
     }
@@ -21,7 +21,7 @@
 <body class="bg-light">
   <!-- Navbar -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">Younes Khalloufi</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNavbar" aria-controls="portfolioNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,8 +32,8 @@
             <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
             <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item">
-              <button id="theme-toggle" class="btn btn-sm btn-outline-light ms-3" aria-label="Toggle Theme">
+            <li class="nav-item ms-2">
+              <button id="theme-toggle" class="btn btn-sm btn-outline-light" aria-label="Toggle Theme">
                 <i class="fas fa-moon"></i>
               </button>
             </li>
@@ -49,7 +49,7 @@
     <section id="about" class="mb-5">
       <div class="row align-items-center">
         <div class="col-md-4 text-center">
-          <img src="younes.jpeg" alt="Younes Khalloufi" class="img-fluid rounded-circle shadow" id="profile-picture">
+          <img src="younes.jpeg" alt="Younes Khalloufi" class="img-fluid rounded-circle shadow-lg" id="profile-picture">
         </div>
         <div class="col-md-8">
           <h2 class="mb-3 text-primary">About Me</h2>
@@ -88,9 +88,7 @@
             <strong>Phone:</strong>
             <a id="phone" href="#" class="text-decoration-none"></a>
           </p>
-          <p class="mb-0">
-            <strong>Connect with me:</strong>
-          </p>
+          <p class="mb-0"><strong>Connect with me:</strong></p>
           <div class="mt-2">
             <a href="https://www.facebook.com/younes.ka.1291/" target="_blank" class="me-3 text-primary fs-4"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/yons_ka" target="_blank" class="me-3 text-danger fs-4"><i class="fab fa-instagram"></i></a>
@@ -104,7 +102,7 @@
     </section>
   </main>
 
-  <!-- Scroll-to-top Button -->
+  <!-- Scroll-to-Top Button -->
   <button id="scrollTopBtn" class="btn btn-primary rounded-circle shadow" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
