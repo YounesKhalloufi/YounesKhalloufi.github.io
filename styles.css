@@ -1,112 +1,97 @@
-/* Global Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  margin: 0;
-  padding: 0;
+/* Custom CSS Variables */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #0056b3;
+  --accent-color: #FF6F61;
 }
 
-/* Navbar Styles */
-.navbar {
-  background-color: #212121;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.navbar a.nav-link {
-  color: white;
-  font-weight: 500;
-}
-
-.navbar a.nav-link:hover {
-  color: #00bfae;
-}
-
-.navbar-toggler {
-  border-color: #00bfae;
-}
-
-.navbar-toggler-icon {
-  background-color: #00bfae;
-}
-
-/* Hero Section Styles */
-section.text-center {
-  padding: 50px 20px;
-  border-radius: 15px;
-}
-
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #f4f4f9;
-}
-
-/* About Me Section Styles */
-#about {
-  background-color: #fff;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Typewriter Effect for About Text */
 #aboutText {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
+  overflow: hidden;
+  border-right: 0.15em solid var(--accent-color);
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-color); }
 }
 
-/* Skills Section Styles */
-#skills {
-  background-color: #fff;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Project Card Animations */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#skills h4 {
-  font-weight: 600;
-}
-
-/* Research Section */
-#research {
-  background-color: #fff;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-#research h4 {
-  font-weight: 600;
-}
-
-/* Projects Section Styles */
-#projects {
-  background-color: #fff;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Scroll-to-Top Button */
+/* Scroll-to-Top Button Styles */
 #scrollTopBtn {
-  background-color: #212121;
-  color: white;
-  border: none;
-  padding: 1rem;
-  border-radius: 50%;
   position: fixed;
   bottom: 30px;
   right: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
   display: none;
+  width: 50px;
+  height: 50px;
 }
 
-#scrollTopBtn:hover {
-  background-color: #00bfae;
+/* Dark Theme Overrides */
+body.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+body.dark .navbar,
+body.dark footer {
+  background: #1e1e1e !important;
+}
+body.dark .card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Navbar Animation */
+.navbar {
+  animation: slideIn 0.5s ease-in-out;
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Section Fade In Animation */
+section {
+  animation: fadeInUp 1s ease-in-out;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Hover Effect */
+button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
 }
