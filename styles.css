@@ -59,22 +59,6 @@ p {
   font-size: 1.1rem;
   color: #333;
   line-height: 1.6;
-  animation: typing 5s steps(50, end), blink-caret 0.75s step-end infinite;
-  overflow: hidden;
-  border-right: 0.1em solid #ff6f61;
-  white-space: nowrap;
-  letter-spacing: 0.1em;
-}
-
-/* Keyframe for Typing Animation */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #ff6f61; }
 }
 
 /* Skills Section Styles */
@@ -89,38 +73,24 @@ p {
   font-weight: 600;
 }
 
-/* Projects Section Styles */
-#projects {
+/* Research Section */
+#research {
   background-color: #fff;
   padding: 3rem;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.project-card {
+#research h4 {
+  font-weight: 600;
+}
+
+/* Projects Section Styles */
+#projects {
+  background-color: #fff;
+  padding: 3rem;
   border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.project-card .card-body {
-  background-color: #1e2a47;
-  color: white;
-}
-
-.project-card .btn {
-  background-color: #00bfae;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.project-card .btn:hover {
-  background-color: #ff6f61;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Scroll-to-Top Button */
@@ -135,44 +105,8 @@ p {
   right: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: none;
-  transition: background-color 0.3s ease;
 }
 
 #scrollTopBtn:hover {
   background-color: #00bfae;
-}
-
-/* Footer Styles */
-footer {
-  background-color: #212121;
-  color: #f4f4f9;
-  text-align: center;
-}
-
-footer a {
-  color: #f4f4f9;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #00bfae;
-}
-
-/* Dark Mode Styles */
-body.dark {
-  background-color: #121212;
-  color: #f4f4f4;
-}
-
-body.dark .navbar {
-  background-color: #1e1e1e;
-}
-
-body.dark #about, body.dark #projects, body.dark #contact {
-  background-color: #1e1e1e;
-  color: #f4f4f4;
-}
-
-body.dark .navbar, body.dark footer {
-  background-color: #1e1e1e;
 }
