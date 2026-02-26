@@ -4,7 +4,12 @@
   --secondary-color: #0056b3;
   --accent-color: #FF6F61;
 }
-
+body {
+    background-image: url("computer.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 }
 
 /* Typewriter Effect for About Text */
