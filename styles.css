@@ -5,12 +5,10 @@
   --accent-color: #FF6F61;
 }
 body {
-  background: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("computer.jpeg");
+  margin: 0;
+  height: 100vh;
+  background: url("computer.jpeg") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 /* Typewriter Effect for About Text */
