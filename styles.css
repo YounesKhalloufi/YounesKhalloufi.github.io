@@ -4,6 +4,15 @@
   --secondary-color: #0056b3;
   --accent-color: #FF6F61;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("computer.jpeg");
+  background-size: cover;        /* Makes image cover whole screen */
+  background-position: center;   /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents repeating */
+  height: 100vh;
+}
 
 /* Typewriter Effect for About Text */
 #aboutText {
