@@ -1,6 +1,6 @@
 // Portfolio Data Object
 const portfolioData = {
-  about: "Hi! I’m Khalloufi Younes, I am a Computer Engineer\n specialized in Artificial Intelligence and Robotics.",
+  about: "Hi! I’m Khalloufi Younes,<br>I am a Computer Engineer specialized in Artificial Intelligence and Robotics.",
   email: "YounesKhalloufi98@gmail.com",
   phone: "+393505981964",
   projects: [
